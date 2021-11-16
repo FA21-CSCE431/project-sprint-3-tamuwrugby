@@ -1,0 +1,43 @@
+
+<div class="people delete">
+<h2>Delete Alumni</h2>
+
+
+<%= form_for(@person, :method => 'delete') do |f| %>
+
+  <p>Are you sure you want to permanently delete this person?</p>
+  
+<div class="container"><table class="table table-bordered table-hover table-stripped">
+  <thead>
+    <tr>
+        <th>UIN</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th>Address</th>
+        <th>Person Type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><%= @person.uin %></td>
+      <td><%= @person.name %></td>
+      <td><%= @person.email %></td>
+      <td><%= @person.phone_number %></td>
+      <td><%= @person.address %></td>
+      <td><%= @person.person_type %></td>
+    </tr>
+  </tbody>
+  </table></div>
+
+  <div class="form-buttons">
+    <%= f.submit("Delete Person") %>
+  </div>
+
+<% end %>
+<br/>
+</div>
+
+<%= link_to('Back', alumnis_path, :class => 'back-link') %>
